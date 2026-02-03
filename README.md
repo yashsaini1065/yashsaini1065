@@ -241,31 +241,7 @@ const yashSaini = {
   <img src="./assets/anim/divider_dark.svg" alt="divider" width="100%" />
 </picture>
 
-## 📊 GitHub Statistics
 
-<div align="center">
-
-<a href="https://github.com/yashsaini1065">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=yashsaini1065&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="Yash's GitHub Stats" />
-</a>
-
-<a href="https://github.com/yashsaini1065">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yashsaini1065&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top Languages" />
-</a>
-
-</div>
-
-<div align="center">
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=yashsaini1065&theme=tokyonight&hide_border=true)
-
-</div>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/anim/divider_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/anim/divider_light.svg">
-  <img src="./assets/anim/divider_dark.svg" alt="divider" width="100%" />
-</picture>
 
 ## 🎯 Core Competencies
 
@@ -368,7 +344,6 @@ I'm always excited to work on innovative projects and collaborate with talented 
 
 <div align="center">
 
-![Visitor Count](https://profile-counter.glitch.me/yashsaini1065/count.svg)
 
 ### 📅 Contribution Graph
 
@@ -413,4 +388,5 @@ I'm always excited to work on innovative projects and collaborate with talented 
 </td>
 </tr>
 </table>
+
 
