@@ -1,6 +1,6 @@
-<table width="100%" bgcolor="#0d1117">
+<table width="100%">
 <tr>
-<td bgcolor="#0d1117" style="padding: 20px; color: #c9d1d9;">
+<td>
 
 <div align="center">
 
@@ -413,3 +413,4 @@ I'm always excited to work on innovative projects and collaborate with talented 
 </td>
 </tr>
 </table>
+
