@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 20" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="pulseGradD" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a0a0f" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0a0a0f" stop-opacity="0"/>
+      <animate attributeName="x1" values="-100%;100%" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0%;200%" dur="3s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="lineBaseD" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#00d4ff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#00d4ff" stop-opacity="0.5"/>
+      <stop offset="85%" stop-color="#00d4ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glowD">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base line -->
+  <line x1="50" y1="10" x2="750" y2="10" stroke="url(#lineBaseD)" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Animated pulse overlay -->
+  <line x1="50" y1="10" x2="750" y2="10" stroke="url(#pulseGradD)" stroke-width="2" stroke-linecap="round" filter="url(#glowD)"/>
+
+  <!-- Center diamond accent -->
+  <g transform="translate(400, 10)">
+    <rect x="-4" y="-4" width="8" height="8" fill="#00d4ff" transform="rotate(45)" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-2" y="-2" width="4" height="4" fill="#00ffff" transform="rotate(45)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Side dots -->
+  <circle cx="150" cy="10" r="2" fill="#00d4ff" opacity="0.4">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="650" cy="10" r="2" fill="#00d4ff" opacity="0.4">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+</svg>

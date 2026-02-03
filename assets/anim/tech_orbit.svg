@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00ffff" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="50%" stop-color="#00ffff"/>
+      <stop offset="100%" stop-color="#0099cc"/>
+    </linearGradient>
+    <filter id="orbitGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="planetGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="#0a0a0f"/>
+
+  <!-- Orbital rings -->
+  <circle cx="200" cy="200" r="60" fill="none" stroke="url(#orbitGrad)" stroke-width="1" stroke-dasharray="4 4">
+    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="20s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="200" r="100" fill="none" stroke="url(#orbitGrad)" stroke-width="1" stroke-dasharray="6 6">
+    <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="30s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="200" r="140" fill="none" stroke="url(#orbitGrad)" stroke-width="1" stroke-dasharray="8 8">
+    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="40s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="200" r="180" fill="none" stroke="url(#orbitGrad)" stroke-width="1" stroke-dasharray="10 10">
+    <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="50s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Core - "YS" initials -->
+  <g filter="url(#orbitGlow)">
+    <circle cx="200" cy="200" r="35" fill="url(#coreGrad)">
+      <animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="200" y="208" text-anchor="middle" fill="#0a0a0f" font-family="system-ui" font-size="22" font-weight="bold">YS</text>
+  </g>
+
+  <!-- Orbit 1 planets (60px) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="8s" repeatCount="indefinite"/>
+    <!-- React -->
+    <g transform="translate(260, 200)" filter="url(#planetGlow)">
+      <circle r="15" fill="#20232a" stroke="#61DAFB" stroke-width="2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#61DAFB" font-family="system-ui" font-size="6" font-weight="bold">React</text>
+    </g>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="180 200 200" to="540 200 200" dur="8s" repeatCount="indefinite"/>
+    <!-- Angular -->
+    <g transform="translate(260, 200)" filter="url(#planetGlow)">
+      <circle r="15" fill="#20232a" stroke="#DD0031" stroke-width="2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#DD0031" font-family="system-ui" font-size="5" font-weight="bold">Angular</text>
+    </g>
+  </g>
+
+  <!-- Orbit 2 planets (100px) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="45 200 200" to="405 200 200" dur="12s" repeatCount="indefinite"/>
+    <!-- Node.js -->
+    <g transform="translate(300, 200)" filter="url(#planetGlow)">
+      <circle r="18" fill="#20232a" stroke="#68A063" stroke-width="2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#68A063" font-family="system-ui" font-size="6" font-weight="bold">Node</text>
+    </g>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="135 200 200" to="495 200 200" dur="12s" repeatCount="indefinite"/>
+    <!-- TypeScript -->
+    <g transform="translate(300, 200)" filter="url(#planetGlow)">
+      <circle r="18" fill="#20232a" stroke="#3178C6" stroke-width="2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#3178C6" font-family="system-ui" font-size="6" font-weight="bold">TS</text>
+    </g>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="225 200 200" to="585 200 200" dur="12s" repeatCount="indefinite"/>
+    <!-- Python -->
+    <g transform="translate(300, 200)" filter="url(#planetGlow)">
+      <circle r="18" fill="#20232a" stroke="#FFD43B" stroke-width="2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#FFD43B" font-family="system-ui" font-size="5" font-weight="bold">Python</text>
+    </g>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="315 200 200" to="675 200 200" dur="12s" repeatCount="indefinite"/>
+    <!-- .NET -->
+    <g transform="translate(300, 200)" filter="url(#planetGlow)">
+      <circle r="18" fill="#20232a" stroke="#512BD4" stroke-width="2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#512BD4" font-family="system-ui" font-size="6" font-weight="bold">.NET</text>
+    </g>
+  </g>
+
+  <!-- Orbit 3 planets (140px) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="18s" repeatCount="indefinite"/>
+    <!-- Firebase -->
+    <g transform="translate(340, 200)" filter="url(#planetGlow)">
+      <circle r="14" fill="#20232a" stroke="#FFCA28" stroke-width="2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#FFCA28" font-family="system-ui" font-size="5" font-weight="bold">Firebase</text>
+    </g>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="120 200 200" to="480 200 200" dur="18s" repeatCount="indefinite"/>
+    <!-- SQL -->
+    <g transform="translate(340, 200)" filter="url(#planetGlow)">
+      <circle r="14" fill="#20232a" stroke="#00758F" stroke-width="2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#00758F" font-family="system-ui" font-size="6" font-weight="bold">SQL</text>
+    </g>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="240 200 200" to="600 200 200" dur="18s" repeatCount="indefinite"/>
+    <!-- Docker -->
+    <g transform="translate(340, 200)" filter="url(#planetGlow)">
+      <circle r="14" fill="#20232a" stroke="#2496ED" stroke-width="2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#2496ED" font-family="system-ui" font-size="5" font-weight="bold">Docker</text>
+    </g>
+  </g>
+
+  <!-- Orbit 4 planets (180px) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="30 200 200" to="390 200 200" dur="25s" repeatCount="indefinite"/>
+    <!-- Linux -->
+    <g transform="translate(380, 200)" filter="url(#planetGlow)">
+      <circle r="12" fill="#20232a" stroke="#FCC624" stroke-width="2"/>
+      <text x="0" y="3" text-anchor="middle" fill="#FCC624" font-family="system-ui" font-size="5" font-weight="bold">Linux</text>
+    </g>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="150 200 200" to="510 200 200" dur="25s" repeatCount="indefinite"/>
+    <!-- Git -->
+    <g transform="translate(380, 200)" filter="url(#planetGlow)">
+      <circle r="12" fill="#20232a" stroke="#F05032" stroke-width="2"/>
+      <text x="0" y="3" text-anchor="middle" fill="#F05032" font-family="system-ui" font-size="6" font-weight="bold">Git</text>
+    </g>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="270 200 200" to="630 200 200" dur="25s" repeatCount="indefinite"/>
+    <!-- AWS -->
+    <g transform="translate(380, 200)" filter="url(#planetGlow)">
+      <circle r="12" fill="#20232a" stroke="#FF9900" stroke-width="2"/>
+      <text x="0" y="3" text-anchor="middle" fill="#FF9900" font-family="system-ui" font-size="6" font-weight="bold">AWS</text>
+    </g>
+  </g>
+
+  <!-- Sparkle effects -->
+  <circle cx="150" cy="150" r="1" fill="#00d4ff">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="280" cy="120" r="0.8" fill="#00ffff">
+    <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+  <circle cx="100" cy="280" r="1" fill="#00d4ff">
+    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+  <circle cx="320" cy="300" r="0.8" fill="#00ffff">
+    <animate attributeName="opacity" values="0;1;0" dur="2.8s" repeatCount="indefinite" begin="0.3s"/>
+  </circle>
+</svg>

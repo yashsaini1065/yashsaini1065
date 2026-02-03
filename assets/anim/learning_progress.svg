@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 30" width="300" height="30">
+  <defs>
+    <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0099cc"/>
+      <stop offset="50%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#00ffff"/>
+    </linearGradient>
+    <linearGradient id="progressShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      <animate attributeName="x1" values="-100%;100%" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0%;200%" dur="2s" repeatCount="indefinite"/>
+    </linearGradient>
+    <clipPath id="progressClip">
+      <rect x="4" y="4" width="220" height="22" rx="11"/>
+    </clipPath>
+    <filter id="progressGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background track -->
+  <rect x="4" y="4" width="292" height="22" rx="11" fill="#1a1a2e" stroke="#00d4ff" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Progress fill (animates to 75%) -->
+  <rect x="4" y="4" width="0" height="22" rx="11" fill="url(#progressGrad)">
+    <animate attributeName="width" from="0" to="220" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+  </rect>
+
+  <!-- Shine overlay -->
+  <g clip-path="url(#progressClip)">
+    <rect x="4" y="4" width="220" height="22" fill="url(#progressShine)"/>
+  </g>
+
+  <!-- Pulsing end cap -->
+  <circle cx="220" cy="15" r="4" fill="#00ffff" filter="url(#progressGlow)" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.8" dur="2s" fill="freeze" keyTimes="0;0.9;1"/>
+    <animate attributeName="r" values="4;6;4" dur="1.5s" repeatCount="indefinite" begin="2s"/>
+  </circle>
+
+  <!-- Percentage text -->
+  <text x="270" y="19" fill="#00d4ff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" opacity="0">
+    75%
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="1.5s"/>
+  </text>
+</svg>

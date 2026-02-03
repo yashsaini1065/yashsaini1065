@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="800" height="120">
+  <defs>
+    <linearGradient id="waveSkillGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="25%" stop-color="#00ffff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="75%" stop-color="#00ffff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="waveSkillGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#61DAFB" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#68A063" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3178C6" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="waveGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="120" fill="#0a0a0f"/>
+
+  <!-- Sound wave visualization -->
+  <g transform="translate(0, 60)">
+    <!-- Wave bars -->
+    <g fill="url(#waveSkillGrad1)" filter="url(#waveGlow)">
+      <rect x="20" y="-15" width="8" height="30" rx="4">
+        <animate attributeName="height" values="30;50;30;20;30" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-15;-25;-15;-10;-15" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="35" y="-20" width="8" height="40" rx="4">
+        <animate attributeName="height" values="40;25;40;55;40" dur="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-20;-12.5;-20;-27.5;-20" dur="1.8s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="50" y="-25" width="8" height="50" rx="4">
+        <animate attributeName="height" values="50;35;50;40;50" dur="1.3s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-25;-17.5;-25;-20;-25" dur="1.3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="65" y="-18" width="8" height="36" rx="4">
+        <animate attributeName="height" values="36;50;36;28;36" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-18;-25;-18;-14;-18" dur="1.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="80" y="-22" width="8" height="44" rx="4">
+        <animate attributeName="height" values="44;30;44;55;44" dur="1.4s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-22;-15;-22;-27.5;-22" dur="1.4s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- Skills text flowing through -->
+    <g font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">
+      <text fill="#61DAFB">
+        <animate attributeName="x" values="120;-100" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite"/>
+        React
+      </text>
+      <text fill="#68A063">
+        <animate attributeName="x" values="220;0" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite"/>
+        Node.js
+      </text>
+      <text fill="#3178C6">
+        <animate attributeName="x" values="330;110" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite"/>
+        TypeScript
+      </text>
+      <text fill="#FFD43B">
+        <animate attributeName="x" values="450;230" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite"/>
+        Python
+      </text>
+      <text fill="#512BD4">
+        <animate attributeName="x" values="550;330" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite"/>
+        .NET
+      </text>
+      <text fill="#DD0031">
+        <animate attributeName="x" values="630;410" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite"/>
+        Angular
+      </text>
+      <text fill="#00758F">
+        <animate attributeName="x" values="730;510" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite"/>
+        SQL
+      </text>
+      <text fill="#2496ED">
+        <animate attributeName="x" values="800;580" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite"/>
+        Docker
+      </text>
+    </g>
+
+    <!-- More wave bars on the right -->
+    <g fill="url(#waveSkillGrad2)" filter="url(#waveGlow)" transform="translate(700, 0)">
+      <rect x="20" y="-15" width="8" height="30" rx="4">
+        <animate attributeName="height" values="30;45;30;25;30" dur="1.7s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-15;-22.5;-15;-12.5;-15" dur="1.7s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="35" y="-22" width="8" height="44" rx="4">
+        <animate attributeName="height" values="44;30;44;50;44" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-22;-15;-22;-25;-22" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="50" y="-18" width="8" height="36" rx="4">
+        <animate attributeName="height" values="36;50;36;30;36" dur="1.9s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-18;-25;-18;-15;-18" dur="1.9s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="65" y="-25" width="8" height="50" rx="4">
+        <animate attributeName="height" values="50;35;50;45;50" dur="1.4s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-25;-17.5;-25;-22.5;-25" dur="1.4s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Subtle horizontal line -->
+  <line x1="100" y1="60" x2="700" y2="60" stroke="#00d4ff" stroke-opacity="0.2" stroke-width="1"/>
+</svg>

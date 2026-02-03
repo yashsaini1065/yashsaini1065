@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="scanlineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#00d4ff" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#00ffff" stop-opacity="0.3"/>
+      <stop offset="55%" stop-color="#00d4ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="800" height="4">
+      <line x1="0" y1="0" x2="800" y2="0" stroke="#00d4ff" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="800" height="200" fill="#0a0a0f"/>
+
+  <!-- Static scanlines pattern -->
+  <rect width="800" height="200" fill="url(#scanlines)"/>
+
+  <!-- Animated scan beam -->
+  <rect x="0" y="-20" width="800" height="40" fill="url(#scanlineGrad)">
+    <animate attributeName="y" values="-40;240" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Edge vignette -->
+  <rect width="800" height="200" fill="none" stroke="#0a0a0f" stroke-width="60" stroke-opacity="0.5"/>
+</svg>

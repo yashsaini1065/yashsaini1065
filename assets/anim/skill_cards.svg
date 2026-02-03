@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00d4ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="reactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#61DAFB"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68A063"/>
+      <stop offset="100%" stop-color="#3C873A"/>
+    </linearGradient>
+    <linearGradient id="tsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3178C6"/>
+      <stop offset="100%" stop-color="#235A97"/>
+    </linearGradient>
+    <linearGradient id="pythonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD43B"/>
+      <stop offset="100%" stop-color="#306998"/>
+    </linearGradient>
+    <linearGradient id="dotnetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#512BD4"/>
+      <stop offset="100%" stop-color="#68217A"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="cardGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="iconGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="200" fill="#0a0a0f"/>
+
+  <!-- Card 1 - React -->
+  <g transform="translate(40, 30)">
+    <rect width="130" height="140" rx="12" fill="url(#cardGrad1)" stroke="#00d4ff" stroke-opacity="0.3" stroke-width="1">
+      <animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <!-- Animated border glow -->
+    <rect x="0" y="0" width="130" height="2" rx="1" fill="url(#glowLine)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <!-- React Icon -->
+    <g transform="translate(65, 55)">
+      <ellipse cx="0" cy="0" rx="25" ry="10" fill="none" stroke="url(#reactGrad)" stroke-width="2" filter="url(#iconGlow)">
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="8s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="0" cy="0" rx="25" ry="10" fill="none" stroke="url(#reactGrad)" stroke-width="2" transform="rotate(60)" filter="url(#iconGlow)">
+        <animateTransform attributeName="transform" type="rotate" values="60;420" dur="8s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="0" cy="0" rx="25" ry="10" fill="none" stroke="url(#reactGrad)" stroke-width="2" transform="rotate(-60)" filter="url(#iconGlow)">
+        <animateTransform attributeName="transform" type="rotate" values="-60;300" dur="8s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="0" cy="0" r="5" fill="#61DAFB">
+        <animate attributeName="r" values="5;6;5" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <text x="65" y="110" text-anchor="middle" fill="#61DAFB" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">React</text>
+    <text x="65" y="128" text-anchor="middle" fill="#8892b0" font-family="system-ui, -apple-system, sans-serif" font-size="10">Frontend</text>
+  </g>
+
+  <!-- Card 2 - Node.js -->
+  <g transform="translate(190, 30)">
+    <rect width="130" height="140" rx="12" fill="url(#cardGrad1)" stroke="#68A063" stroke-opacity="0.3" stroke-width="1">
+      <animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <rect x="0" y="0" width="130" height="2" rx="1" fill="#68A063">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <!-- Node Icon -->
+    <g transform="translate(65, 55)">
+      <polygon points="0,-22 19,11 -19,11" fill="none" stroke="url(#nodeGrad)" stroke-width="2.5" stroke-linejoin="round" filter="url(#iconGlow)">
+        <animate attributeName="stroke-opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+      </polygon>
+      <text x="0" y="5" text-anchor="middle" fill="#68A063" font-family="system-ui" font-size="12" font-weight="bold">JS</text>
+    </g>
+    <text x="65" y="110" text-anchor="middle" fill="#68A063" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">Node.js</text>
+    <text x="65" y="128" text-anchor="middle" fill="#8892b0" font-family="system-ui, -apple-system, sans-serif" font-size="10">Backend</text>
+  </g>
+
+  <!-- Card 3 - TypeScript -->
+  <g transform="translate(340, 30)">
+    <rect width="130" height="140" rx="12" fill="url(#cardGrad1)" stroke="#3178C6" stroke-opacity="0.3" stroke-width="1">
+      <animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <rect x="0" y="0" width="130" height="2" rx="1" fill="#3178C6">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <!-- TS Icon -->
+    <g transform="translate(65, 55)">
+      <rect x="-20" y="-20" width="40" height="40" rx="4" fill="url(#tsGrad)" filter="url(#iconGlow)">
+        <animate attributeName="rx" values="4;8;4" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <text x="0" y="8" text-anchor="middle" fill="white" font-family="system-ui" font-size="18" font-weight="bold">TS</text>
+    </g>
+    <text x="65" y="110" text-anchor="middle" fill="#3178C6" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">TypeScript</text>
+    <text x="65" y="128" text-anchor="middle" fill="#8892b0" font-family="system-ui, -apple-system, sans-serif" font-size="10">Language</text>
+  </g>
+
+  <!-- Card 4 - Python -->
+  <g transform="translate(490, 30)">
+    <rect width="130" height="140" rx="12" fill="url(#cardGrad1)" stroke="#FFD43B" stroke-opacity="0.3" stroke-width="1">
+      <animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <rect x="0" y="0" width="130" height="2" rx="1" fill="#FFD43B">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <!-- Python Icon -->
+    <g transform="translate(65, 55)">
+      <path d="M-12,-18 C-12,-22 -8,-22 0,-22 C8,-22 12,-22 12,-18 L12,-5 C12,0 8,2 0,2 L-12,2 L-12,-18 M-6,-16 C-6,-14 -4,-14 -4,-16 C-4,-18 -6,-18 -6,-16" fill="#FFD43B" filter="url(#iconGlow)">
+        <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M12,18 C12,22 8,22 0,22 C-8,22 -12,22 -12,18 L-12,5 C-12,0 -8,-2 0,-2 L12,-2 L12,18 M6,16 C6,14 4,14 4,16 C4,18 6,18 6,16" fill="#306998" filter="url(#iconGlow)">
+        <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      </path>
+    </g>
+    <text x="65" y="110" text-anchor="middle" fill="#FFD43B" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">Python</text>
+    <text x="65" y="128" text-anchor="middle" fill="#8892b0" font-family="system-ui, -apple-system, sans-serif" font-size="10">Scripting</text>
+  </g>
+
+  <!-- Card 5 - .NET -->
+  <g transform="translate(640, 30)">
+    <rect width="130" height="140" rx="12" fill="url(#cardGrad1)" stroke="#512BD4" stroke-opacity="0.3" stroke-width="1">
+      <animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <rect x="0" y="0" width="130" height="2" rx="1" fill="#512BD4">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <!-- .NET Icon -->
+    <g transform="translate(65, 55)">
+      <circle cx="0" cy="0" r="22" fill="url(#dotnetGrad)" filter="url(#iconGlow)">
+        <animate attributeName="r" values="22;24;22" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="6" text-anchor="middle" fill="white" font-family="system-ui" font-size="11" font-weight="bold">.NET</text>
+    </g>
+    <text x="65" y="110" text-anchor="middle" fill="#512BD4" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">.NET Core</text>
+    <text x="65" y="128" text-anchor="middle" fill="#8892b0" font-family="system-ui, -apple-system, sans-serif" font-size="10">Enterprise</text>
+  </g>
+
+  <!-- Floating particles -->
+  <circle cx="100" cy="15" r="1" fill="#00d4ff">
+    <animate attributeName="cy" values="15;185;15" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="300" cy="185" r="1.2" fill="#61DAFB">
+    <animate attributeName="cy" values="185;15;185" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="500" cy="15" r="0.8" fill="#68A063">
+    <animate attributeName="cy" values="15;185;15" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="185" r="1" fill="#FFD43B">
+    <animate attributeName="cy" values="185;15;185" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="9s" repeatCount="indefinite"/>
+  </circle>
+</svg>

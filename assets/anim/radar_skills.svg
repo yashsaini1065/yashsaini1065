@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="radarFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00ffff" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="radarStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#00ffff"/>
+    </linearGradient>
+    <filter id="radarGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="dotGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="#0a0a0f"/>
+
+  <!-- Radar grid circles -->
+  <g stroke="#00d4ff" stroke-opacity="0.15" fill="none" stroke-width="1">
+    <circle cx="200" cy="200" r="40"/>
+    <circle cx="200" cy="200" r="80"/>
+    <circle cx="200" cy="200" r="120"/>
+    <circle cx="200" cy="200" r="160"/>
+  </g>
+
+  <!-- Radar grid lines (6 axes) -->
+  <g stroke="#00d4ff" stroke-opacity="0.15" stroke-width="1">
+    <line x1="200" y1="200" x2="200" y2="40"/>
+    <line x1="200" y1="200" x2="338.6" y2="120"/>
+    <line x1="200" y1="200" x2="338.6" y2="280"/>
+    <line x1="200" y1="200" x2="200" y2="360"/>
+    <line x1="200" y1="200" x2="61.4" y2="280"/>
+    <line x1="200" y1="200" x2="61.4" y2="120"/>
+  </g>
+
+  <!-- Axis labels -->
+  <g font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+    <text x="200" y="25" fill="#61DAFB">Frontend</text>
+    <text x="355" y="115" fill="#68A063">Backend</text>
+    <text x="355" y="295" fill="#3178C6">Database</text>
+    <text x="200" y="385" fill="#512BD4">Enterprise</text>
+    <text x="45" y="295" fill="#FFD43B">Security</text>
+    <text x="45" y="115" fill="#DD0031">Mobile</text>
+  </g>
+
+  <!-- Skill area polygon with animation -->
+  <polygon
+    fill="url(#radarFill)"
+    stroke="url(#radarStroke)"
+    stroke-width="2"
+    filter="url(#radarGlow)"
+    opacity="0">
+    <animate
+      attributeName="points"
+      values="200,200 200,200 200,200 200,200 200,200 200,200;200,56 314,132 306,264 200,312 102,256 94,140"
+      dur="2s"
+      fill="freeze"
+      calcMode="spline"
+      keySplines="0.4 0 0.2 1"/>
+    <animate attributeName="opacity" values="0;0.8" dur="2s" fill="freeze"/>
+  </polygon>
+
+  <!-- Animated stroke effect -->
+  <polygon
+    fill="none"
+    stroke="#00ffff"
+    stroke-width="1"
+    stroke-dasharray="600"
+    stroke-dashoffset="600"
+    opacity="0.5">
+    <animate
+      attributeName="points"
+      values="200,200 200,200 200,200 200,200 200,200 200,200;200,56 314,132 306,264 200,312 102,256 94,140"
+      dur="2s"
+      fill="freeze"
+      calcMode="spline"
+      keySplines="0.4 0 0.2 1"/>
+    <animate attributeName="stroke-dashoffset" values="600;0" dur="3s" fill="freeze" begin="1s"/>
+  </polygon>
+
+  <!-- Data points -->
+  <g filter="url(#dotGlow)">
+    <!-- Frontend - 90% -->
+    <circle cx="200" cy="200" r="6" fill="#61DAFB">
+      <animate attributeName="cx" values="200;200" dur="2s" fill="freeze"/>
+      <animate attributeName="cy" values="200;56" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    <!-- Backend - 87% -->
+    <circle cx="200" cy="200" r="6" fill="#68A063">
+      <animate attributeName="cx" values="200;314" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="cy" values="200;132" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="r" values="6;8;6" dur="2.2s" repeatCount="indefinite" begin="2.2s"/>
+    </circle>
+    <!-- Database - 83% -->
+    <circle cx="200" cy="200" r="6" fill="#3178C6">
+      <animate attributeName="cx" values="200;306" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="cy" values="200;264" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="r" values="6;8;6" dur="2.4s" repeatCount="indefinite" begin="2.4s"/>
+    </circle>
+    <!-- Enterprise - 80% -->
+    <circle cx="200" cy="200" r="6" fill="#512BD4">
+      <animate attributeName="cx" values="200;200" dur="2s" fill="freeze"/>
+      <animate attributeName="cy" values="200;312" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="r" values="6;8;6" dur="2.1s" repeatCount="indefinite" begin="2.1s"/>
+    </circle>
+    <!-- Security - 75% -->
+    <circle cx="200" cy="200" r="6" fill="#FFD43B">
+      <animate attributeName="cx" values="200;102" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="cy" values="200;256" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="r" values="6;8;6" dur="2.3s" repeatCount="indefinite" begin="2.3s"/>
+    </circle>
+    <!-- Mobile - 78% -->
+    <circle cx="200" cy="200" r="6" fill="#DD0031">
+      <animate attributeName="cx" values="200;94" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="cy" values="200;140" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="r" values="6;8;6" dur="2.5s" repeatCount="indefinite" begin="2.5s"/>
+    </circle>
+  </g>
+
+  <!-- Center dot -->
+  <circle cx="200" cy="200" r="4" fill="#00d4ff">
+    <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Scanning effect -->
+  <line x1="200" y1="200" x2="200" y2="40" stroke="#00ffff" stroke-width="2" stroke-opacity="0.3">
+    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="4s" repeatCount="indefinite"/>
+  </line>
+</svg>
