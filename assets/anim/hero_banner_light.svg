@@ -1,86 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <linearGradient id="waveGradL1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="50%" stop-color="#f1f5f9"/>
-      <stop offset="100%" stop-color="#f8fafc"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F6F9FC"/>
+      <stop offset="50%" stop-color="#ECF4FF"/>
+      <stop offset="100%" stop-color="#F6F9FC"/>
+      <animate attributeName="x1" dur="4s" values="0%;-20%;0%" repeatCount="indefinite"/>
+      <animate attributeName="x2" dur="4s" values="100%;120%;100%" repeatCount="indefinite"/>
     </linearGradient>
-    <linearGradient id="waveGradL2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0891b2" stop-opacity="0.12"/>
-      <stop offset="50%" stop-color="#0e7490" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#0891b2" stop-opacity="0.12"/>
+    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00BFEA" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3AA9FF" stop-opacity="0.15"/>
     </linearGradient>
-    <linearGradient id="waveGradL3" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.08"/>
-      <stop offset="50%" stop-color="#0891b2" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.08"/>
+    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3AA9FF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00BFEA" stop-opacity="0.10"/>
     </linearGradient>
-    <filter id="glowL">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <radialGradient id="twinkle" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2B4A6B" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#2B4A6B" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="800" height="200" fill="url(#waveGradL1)"/>
+  <rect width="1200" height="320" fill="url(#bg)"/>
 
-  <!-- Wave Layer 1 - Back -->
-  <path fill="url(#waveGradL2)" opacity="0.7">
+  <path fill="url(#wave1)">
     <animate attributeName="d" dur="4s" repeatCount="indefinite" values="
-      M0,160 C150,140 300,180 400,160 C500,140 650,180 800,160 L800,200 L0,200 Z;
-      M0,160 C150,180 300,140 400,160 C500,180 650,140 800,160 L800,200 L0,200 Z;
-      M0,160 C150,140 300,180 400,160 C500,140 650,180 800,160 L800,200 L0,200 Z"/>
+      M0,210 C200,170 420,250 600,210 C780,170 1000,260 1200,220 L1200,320 L0,320 Z;
+      M0,220 C220,260 420,170 600,220 C780,270 980,180 1200,230 L1200,320 L0,320 Z;
+      M0,210 C200,170 420,250 600,210 C780,170 1000,260 1200,220 L1200,320 L0,320 Z
+    "/>
   </path>
 
-  <!-- Wave Layer 2 - Middle -->
-  <path fill="url(#waveGradL2)" opacity="0.5">
-    <animate attributeName="d" dur="3.5s" repeatCount="indefinite" values="
-      M0,170 C200,155 350,185 500,170 C650,155 750,185 800,170 L800,200 L0,200 Z;
-      M0,170 C200,185 350,155 500,170 C650,185 750,155 800,170 L800,200 L0,200 Z;
-      M0,170 C200,155 350,185 500,170 C650,155 750,185 800,170 L800,200 L0,200 Z"/>
+  <path fill="url(#wave2)">
+    <animate attributeName="d" dur="4s" repeatCount="indefinite" values="
+      M0,240 C220,210 420,280 600,245 C780,210 980,290 1200,250 L1200,320 L0,320 Z;
+      M0,250 C200,290 430,210 600,255 C770,300 980,220 1200,260 L1200,320 L0,320 Z;
+      M0,240 C220,210 420,280 600,245 C780,210 980,290 1200,250 L1200,320 L0,320 Z
+    "/>
   </path>
 
-  <!-- Wave Layer 3 - Front -->
-  <path fill="url(#waveGradL3)" opacity="0.6">
-    <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
-      M0,180 C100,170 200,190 300,180 C400,170 500,190 600,180 C700,170 750,190 800,180 L800,200 L0,200 Z;
-      M0,180 C100,190 200,170 300,180 C400,190 500,170 600,180 C700,190 750,170 800,180 L800,200 L0,200 Z;
-      M0,180 C100,170 200,190 300,180 C400,170 500,190 600,180 C700,170 750,190 800,180 L800,200 L0,200 Z"/>
-  </path>
-
-  <!-- Twinkle Particles -->
-  <circle cx="100" cy="40" r="1.5" fill="#0891b2" filter="url(#glowL)">
-    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite"/>
-    <animate attributeName="r" values="1;2;1" dur="2.5s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="250" cy="70" r="1" fill="#06b6d4" filter="url(#glowL)">
-    <animate attributeName="opacity" values="0.25;0.7;0.25" dur="3s" repeatCount="indefinite" begin="0.5s"/>
-    <animate attributeName="r" values="0.8;1.5;0.8" dur="3s" repeatCount="indefinite" begin="0.5s"/>
-  </circle>
-  <circle cx="450" cy="35" r="1.2" fill="#0891b2" filter="url(#glowL)">
-    <animate attributeName="opacity" values="0.2;0.55;0.2" dur="2.8s" repeatCount="indefinite" begin="1s"/>
-    <animate attributeName="r" values="1;1.8;1" dur="2.8s" repeatCount="indefinite" begin="1s"/>
-  </circle>
-  <circle cx="600" cy="55" r="1" fill="#06b6d4" filter="url(#glowL)">
-    <animate attributeName="opacity" values="0.25;0.65;0.25" dur="3.2s" repeatCount="indefinite" begin="0.3s"/>
-    <animate attributeName="r" values="0.8;1.6;0.8" dur="3.2s" repeatCount="indefinite" begin="0.3s"/>
-  </circle>
-  <circle cx="720" cy="80" r="1.3" fill="#0891b2" filter="url(#glowL)">
-    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.6s" repeatCount="indefinite" begin="0.8s"/>
-    <animate attributeName="r" values="1;1.7;1" dur="2.6s" repeatCount="indefinite" begin="0.8s"/>
-  </circle>
-  <circle cx="180" cy="95" r="0.8" fill="#0e7490" filter="url(#glowL)">
-    <animate attributeName="opacity" values="0.15;0.5;0.15" dur="3.5s" repeatCount="indefinite" begin="1.2s"/>
-  </circle>
-  <circle cx="520" cy="90" r="0.9" fill="#06b6d4" filter="url(#glowL)">
-    <animate attributeName="opacity" values="0.1;0.5;0.1" dur="2.9s" repeatCount="indefinite" begin="0.6s"/>
-  </circle>
-
-  <!-- Subtle grid lines -->
-  <line x1="0" y1="100" x2="800" y2="100" stroke="#0891b2" stroke-opacity="0.06" stroke-width="0.5"/>
-  <line x1="0" y1="50" x2="800" y2="50" stroke="#0891b2" stroke-opacity="0.04" stroke-width="0.5"/>
-  <line x1="0" y1="150" x2="800" y2="150" stroke="#0891b2" stroke-opacity="0.04" stroke-width="0.5"/>
+  <g fill="url(#twinkle)">
+    <circle cx="120" cy="80" r="2.5">
+      <animate attributeName="r" values="2;3;2" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="60" r="1.8">
+      <animate attributeName="r" values="1.6;2.4;1.6" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.5;0.15" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="420" cy="90" r="2.2">
+      <animate attributeName="r" values="2;3.2;2" dur="3.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.55;0.2" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="760" cy="70" r="2.0">
+      <animate attributeName="r" values="1.8;2.8;1.8" dur="4.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.55;0.2" dur="4.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="980" cy="95" r="2.4">
+      <animate attributeName="r" values="2.2;3.4;2.2" dur="3.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1080" cy="60" r="1.6">
+      <animate attributeName="r" values="1.4;2.2;1.4" dur="4.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.18;0.5;0.18" dur="4.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
 </svg>

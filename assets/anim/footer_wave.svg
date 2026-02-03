@@ -1,57 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 100" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <linearGradient id="footerGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#0a0a0f" stop-opacity="0.8"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B111B"/>
+      <stop offset="50%" stop-color="#0D1626"/>
+      <stop offset="100%" stop-color="#0B111B"/>
+      <animate attributeName="x1" dur="4s" values="0%;-20%;0%" repeatCount="indefinite"/>
+      <animate attributeName="x2" dur="4s" values="100%;120%;100%" repeatCount="indefinite"/>
     </linearGradient>
-    <linearGradient id="footerGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#00ffff" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#0a0a0f" stop-opacity="0.6"/>
-    </linearGradient>
-    <linearGradient id="footerGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0099cc" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#0a0a0f" stop-opacity="0.4"/>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#4CC9FF" stop-opacity="0.12"/>
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="800" height="100" fill="#0a0a0f"/>
+  <rect width="1200" height="200" fill="url(#bg)"/>
 
-  <!-- Wave Layer 1 - Back (slowest) -->
-  <path fill="url(#footerGrad3)" opacity="0.7">
-    <animate attributeName="d" dur="5s" repeatCount="indefinite" values="
-      M0,40 C100,20 200,50 300,35 C400,20 500,50 600,35 C700,20 800,40 800,40 L800,100 L0,100 Z;
-      M0,35 C100,50 200,20 300,40 C400,50 500,20 600,40 C700,50 800,35 800,35 L800,100 L0,100 Z;
-      M0,40 C100,20 200,50 300,35 C400,20 500,50 600,35 C700,20 800,40 800,40 L800,100 L0,100 Z"/>
-  </path>
-
-  <!-- Wave Layer 2 - Middle -->
-  <path fill="url(#footerGrad2)" opacity="0.6">
+  <path fill="url(#wave)">
     <animate attributeName="d" dur="4s" repeatCount="indefinite" values="
-      M0,50 C150,35 250,60 400,45 C550,30 650,55 800,50 L800,100 L0,100 Z;
-      M0,45 C150,60 250,35 400,50 C550,60 650,40 800,45 L800,100 L0,100 Z;
-      M0,50 C150,35 250,60 400,45 C550,30 650,55 800,50 L800,100 L0,100 Z"/>
+      M0,90 C180,70 420,120 600,90 C780,60 1000,120 1200,95 L1200,200 L0,200 Z;
+      M0,95 C200,125 420,70 600,100 C780,130 980,80 1200,105 L1200,200 L0,200 Z;
+      M0,90 C180,70 420,120 600,90 C780,60 1000,120 1200,95 L1200,200 L0,200 Z
+    "/>
   </path>
-
-  <!-- Wave Layer 3 - Front (fastest) -->
-  <path fill="url(#footerGrad1)" opacity="0.8">
-    <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
-      M0,60 C80,50 160,70 240,60 C320,50 400,70 480,60 C560,50 640,70 720,60 C760,55 800,60 800,60 L800,100 L0,100 Z;
-      M0,60 C80,70 160,50 240,60 C320,70 400,50 480,60 C560,70 640,50 720,60 C760,65 800,60 800,60 L800,100 L0,100 Z;
-      M0,60 C80,50 160,70 240,60 C320,50 400,70 480,60 C560,50 640,70 720,60 C760,55 800,60 800,60 L800,100 L0,100 Z"/>
-  </path>
-
-  <!-- Subtle sparkles on wave crests -->
-  <circle cx="150" cy="45" r="1" fill="#00ffff">
-    <animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="400" cy="50" r="1.2" fill="#00d4ff">
-    <animate attributeName="opacity" values="0;0.7;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
-  </circle>
-  <circle cx="650" cy="48" r="1" fill="#00ffff">
-    <animate attributeName="opacity" values="0;0.75;0" dur="2.2s" repeatCount="indefinite" begin="1s"/>
-  </circle>
-
-  <!-- Bottom gradient fade -->
-  <rect y="80" width="800" height="20" fill="url(#footerGrad1)" opacity="0.5"/>
 </svg>
