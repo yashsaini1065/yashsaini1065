@@ -308,7 +308,7 @@ principles = {
 
 ## 🤝 Let's Connect & Collaborate!
 
-<div align="center">
+<div>
 
 I'm always excited to work on innovative projects and collaborate with talented developers!
 
@@ -388,5 +388,6 @@ I'm always excited to work on innovative projects and collaborate with talented 
 </td>
 </tr>
 </table>
+
 
 
